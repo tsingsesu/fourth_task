@@ -24,6 +24,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
+            'TurtleControl = mai_pkg.turtle_control:main'
         ],
     },
 )
