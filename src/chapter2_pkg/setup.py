@@ -24,6 +24,8 @@ setup(
     },
     entry_points={
         'console_scripts': [
+            'Publisher = chapter2_pkg.publisher:main',
+            'Subscriber = chapter2_pkg.subscriber:main',
         ],
     },
 )
