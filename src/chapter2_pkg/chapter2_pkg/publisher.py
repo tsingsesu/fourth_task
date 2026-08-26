@@ -6,10 +6,11 @@ from std_msgs.msg import Float64MultiArray , String
 class Publisher(Node):
     def __init__(self):
         super().__init__('my_publisher')
-        self.pub = self.create_publisher(Float64MultiArray,'data',10)
-        self.timer = self.create_timer(1.0,self.timer_callback)
+        self.finished = False
+        self.pub = self.create_publisher(Float64MultiArray,'data',10)#以Float64MultiArray形式发布数据
+        self.timer = self.create_timer(1.0,self.timer_callback)#每隔1秒调用回调函数发布消息
         self.seq = 0
-        self.status_pub = self.create_publisher(String , 'status',10)
+        self.status_pub = self.create_publisher(String , 'status',10)#以Float64MultiArray形式发布完成消息
 
     def timer_callback(self):
         self.seq = self.seq + 1
@@ -20,19 +21,25 @@ class Publisher(Node):
             random.uniform(10.5,12.6),
             random.uniform(25.0,48.0),
         ]
-        self.pub.publish(msg)
+        self.pub.publish(msg)#以Float64MultiArray形式发布数据
 
-        if self.seq >= 10:
-            end = String()
-            end.data = 'done'
-            self.status_pub.publish(end)
-            self.get_logger().info('已发完10组并发送结束信号')
-            self.timer.cancel() 
+        if self.seq >= 10:#每次发布10条
+            self.timer.cancel()#结束发布
+            self.done_timer = self.create_timer(0.3, self.send_done)#延迟0.3秒后发布“已完成”消息
 
+    def send_done(self):
+        end = String()
+        end.data = 'done'
+        self.status_pub.publish(end)
+        self.get_logger().info('已发完10组并发送结束信号')
+        self.done_timer.cancel()
+        self.finished = True
 
 def main():
     rclpy.init()
     node = Publisher()
-    rclpy.spin(node)
+    while rclpy.ok() and not node.finished:
+        rclpy.spin_once(node, timeout_sec=0.2)
     node.destroy_node()
     rclpy.shutdown()
+

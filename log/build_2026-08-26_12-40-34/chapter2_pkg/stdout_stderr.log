@@ -1,0 +1,23 @@
+running egg_info
+writing ../../build/chapter2_pkg/chapter2_pkg.egg-info/PKG-INFO
+writing dependency_links to ../../build/chapter2_pkg/chapter2_pkg.egg-info/dependency_links.txt
+writing entry points to ../../build/chapter2_pkg/chapter2_pkg.egg-info/entry_points.txt
+writing requirements to ../../build/chapter2_pkg/chapter2_pkg.egg-info/requires.txt
+writing top-level names to ../../build/chapter2_pkg/chapter2_pkg.egg-info/top_level.txt
+reading manifest file '../../build/chapter2_pkg/chapter2_pkg.egg-info/SOURCES.txt'
+writing manifest file '../../build/chapter2_pkg/chapter2_pkg.egg-info/SOURCES.txt'
+running build
+running build_py
+copying chapter2_pkg/publisher.py -> /home/lhl87/fourth_task/build/chapter2_pkg/build/lib/chapter2_pkg
+running install
+running install_lib
+copying /home/lhl87/fourth_task/build/chapter2_pkg/build/lib/chapter2_pkg/publisher.py -> /home/lhl87/fourth_task/install/chapter2_pkg/lib/python3.10/site-packages/chapter2_pkg
+byte-compiling /home/lhl87/fourth_task/install/chapter2_pkg/lib/python3.10/site-packages/chapter2_pkg/publisher.py to publisher.cpython-310.pyc
+running install_data
+running install_egg_info
+removing '/home/lhl87/fourth_task/install/chapter2_pkg/lib/python3.10/site-packages/chapter2_pkg-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/chapter2_pkg/chapter2_pkg.egg-info to /home/lhl87/fourth_task/install/chapter2_pkg/lib/python3.10/site-packages/chapter2_pkg-0.0.0-py3.10.egg-info
+running install_scripts
+Installing Publisher script to /home/lhl87/fourth_task/install/chapter2_pkg/lib/chapter2_pkg
+Installing Subscriber script to /home/lhl87/fourth_task/install/chapter2_pkg/lib/chapter2_pkg
+writing list of installed files to '/home/lhl87/fourth_task/build/chapter2_pkg/install.log'

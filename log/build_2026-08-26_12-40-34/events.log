@@ -1,0 +1,36 @@
+[0.000000] (-) TimerEvent: {}
+[0.000043] (-) JobUnselected: {'identifier': 'mai_pkg'}
+[0.000059] (chapter2_pkg) JobQueued: {'identifier': 'chapter2_pkg', 'dependencies': OrderedDict()}
+[0.000071] (chapter2_pkg) JobStarted: {'identifier': 'chapter2_pkg'}
+[0.099476] (-) TimerEvent: {}
+[0.199665] (-) TimerEvent: {}
+[0.299866] (-) TimerEvent: {}
+[0.369265] (chapter2_pkg) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/chapter2_pkg', 'build', '--build-base', '/home/lhl87/fourth_task/build/chapter2_pkg/build', 'install', '--record', '/home/lhl87/fourth_task/build/chapter2_pkg/install.log', '--install-scripts', '$base/lib/chapter2_pkg', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/lhl87/fourth_task/src/chapter2_pkg', 'env': {'HTTPS_PROXY': 'http://127.0.0.1:7890', 'no_proxy': '192.168.*,172.31.*,172.30.*,172.2*,172.19.*,172.18.*,172.17.*,172.16.*,10.*,127.*,*.local,localhost,*360buyimg.com,100ime-iat-api.xfyun.cn,*jd.com,*zhimg.com,*zhihu.com', 'USER': 'lhl87', 'SHLVL': '0', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/lhl87', 'OLDPWD': '/mnt/c/Users/lhl87', 'NO_PROXY': '192.168.*,172.31.*,172.30.*,172.2*,172.19.*,172.18.*,172.17.*,172.16.*,10.*,127.*,*.local,localhost,*360buyimg.com,100ime-iat-api.xfyun.cn,*jd.com,*zhimg.com,*zhihu.com', 'ROS_PYTHON_VERSION': '3', 'WSL_DISTRO_NAME': 'Ubuntu2204', 'WAYLAND_DISPLAY': 'wayland-0', 'https_proxy': 'http://127.0.0.1:7890', 'ROS_DISTRO': 'humble', 'LOGNAME': 'lhl87', 'NAME': 'My-sweetest-one', 'WSL_INTEROP': '/run/WSL/43635_interop', 'http_proxy': 'http://127.0.0.1:7890', 'PULSE_SERVER': 'unix:/mnt/wslg/PulseServer', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm-256color', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/home/lhl87/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA app/NvDLISR:/mnt/c/Program Files/dotnet/:/mnt/d/runtime/win64:/mnt/d/bin:/mnt/e/MiKTeX/miktex/bin/x64/:/mnt/e/Git/cmd:/mnt/e/node.js/:/mnt/c/Users/lhl87/AppData/Local/hermes/bin:/mnt/c/Users/lhl87/AppData/Local/Programs/Python/Python313/Scripts/:/mnt/c/Users/lhl87/AppData/Local/Programs/Python/Python313/:/mnt/c/Users/lhl87/AppData/Local/Programs/Python/Launcher/:/mnt/c/Users/lhl87/AppData/Local/Microsoft/WindowsApps:/mnt/d/Microsoft VS Code/bin:/mnt/c/Users/lhl87/AppData/Local/Programs/MiKTeX/miktex/bin/x64/:/mnt/e/cursor/resources/app/bin:/mnt/c/Users/lhl87/AppData/Local/Microsoft/WinGet/Packages/Anthropic.ClaudeCode_Microsoft.Winget.Source_8wekyb3d8bbwe:/mnt/e/mingw64/mingw64/bin:/mnt/e/mingw64/mingw64/bin:/mnt/c/Users/lhl87/AppData/Roaming/npm:/snap/bin', 'XDG_RUNTIME_DIR': '/mnt/wslg/runtime-dir', 'DISPLAY': ':0', 'LANG': 'C.UTF-8', 'AMENT_PREFIX_PATH': '/opt/ros/humble', 'SHELL': '/bin/bash', 'PWD': '/home/lhl87/fourth_task/build/chapter2_pkg', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/lhl87/fourth_task/build/chapter2_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/lhl87/fourth_task/install/chapter2_pkg/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'HTTP_PROXY': 'http://127.0.0.1:7890', 'COLCON': '1', 'WSL2_GUI_APPS_ENABLED': '1', 'HOSTTYPE': 'x86_64', 'WSLENV': ''}, 'shell': False}
+[0.399984] (-) TimerEvent: {}
+[0.468012] (chapter2_pkg) StdoutLine: {'line': b'running egg_info\n'}
+[0.468366] (chapter2_pkg) StdoutLine: {'line': b'writing ../../build/chapter2_pkg/chapter2_pkg.egg-info/PKG-INFO\n'}
+[0.468441] (chapter2_pkg) StdoutLine: {'line': b'writing dependency_links to ../../build/chapter2_pkg/chapter2_pkg.egg-info/dependency_links.txt\n'}
+[0.468574] (chapter2_pkg) StdoutLine: {'line': b'writing entry points to ../../build/chapter2_pkg/chapter2_pkg.egg-info/entry_points.txt\n'}
+[0.468604] (chapter2_pkg) StdoutLine: {'line': b'writing requirements to ../../build/chapter2_pkg/chapter2_pkg.egg-info/requires.txt\n'}
+[0.468629] (chapter2_pkg) StdoutLine: {'line': b'writing top-level names to ../../build/chapter2_pkg/chapter2_pkg.egg-info/top_level.txt\n'}
+[0.469160] (chapter2_pkg) StdoutLine: {'line': b"reading manifest file '../../build/chapter2_pkg/chapter2_pkg.egg-info/SOURCES.txt'\n"}
+[0.469490] (chapter2_pkg) StdoutLine: {'line': b"writing manifest file '../../build/chapter2_pkg/chapter2_pkg.egg-info/SOURCES.txt'\n"}
+[0.469533] (chapter2_pkg) StdoutLine: {'line': b'running build\n'}
+[0.469558] (chapter2_pkg) StdoutLine: {'line': b'running build_py\n'}
+[0.469634] (chapter2_pkg) StdoutLine: {'line': b'copying chapter2_pkg/publisher.py -> /home/lhl87/fourth_task/build/chapter2_pkg/build/lib/chapter2_pkg\n'}
+[0.469783] (chapter2_pkg) StdoutLine: {'line': b'running install\n'}
+[0.469944] (chapter2_pkg) StdoutLine: {'line': b'running install_lib\n'}
+[0.470312] (chapter2_pkg) StdoutLine: {'line': b'copying /home/lhl87/fourth_task/build/chapter2_pkg/build/lib/chapter2_pkg/publisher.py -> /home/lhl87/fourth_task/install/chapter2_pkg/lib/python3.10/site-packages/chapter2_pkg\n'}
+[0.470589] (chapter2_pkg) StdoutLine: {'line': b'byte-compiling /home/lhl87/fourth_task/install/chapter2_pkg/lib/python3.10/site-packages/chapter2_pkg/publisher.py to publisher.cpython-310.pyc\n'}
+[0.471018] (chapter2_pkg) StdoutLine: {'line': b'running install_data\n'}
+[0.471155] (chapter2_pkg) StdoutLine: {'line': b'running install_egg_info\n'}
+[0.472568] (chapter2_pkg) StdoutLine: {'line': b"removing '/home/lhl87/fourth_task/install/chapter2_pkg/lib/python3.10/site-packages/chapter2_pkg-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[0.472694] (chapter2_pkg) StdoutLine: {'line': b'Copying ../../build/chapter2_pkg/chapter2_pkg.egg-info to /home/lhl87/fourth_task/install/chapter2_pkg/lib/python3.10/site-packages/chapter2_pkg-0.0.0-py3.10.egg-info\n'}
+[0.473335] (chapter2_pkg) StdoutLine: {'line': b'running install_scripts\n'}
+[0.484415] (chapter2_pkg) StdoutLine: {'line': b'Installing Publisher script to /home/lhl87/fourth_task/install/chapter2_pkg/lib/chapter2_pkg\n'}
+[0.484505] (chapter2_pkg) StdoutLine: {'line': b'Installing Subscriber script to /home/lhl87/fourth_task/install/chapter2_pkg/lib/chapter2_pkg\n'}
+[0.484601] (chapter2_pkg) StdoutLine: {'line': b"writing list of installed files to '/home/lhl87/fourth_task/build/chapter2_pkg/install.log'\n"}
+[0.494902] (chapter2_pkg) CommandEnded: {'returncode': 0}
+[0.500177] (-) TimerEvent: {}
+[0.503745] (chapter2_pkg) JobEnded: {'identifier': 'chapter2_pkg', 'rc': 0}
+[0.504060] (-) EventReactorShutdown: {}

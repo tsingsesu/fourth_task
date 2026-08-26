@@ -6,6 +6,7 @@ from std_msgs.msg import Float64MultiArray , String
 class Publisher(Node):
     def __init__(self):
         super().__init__('my_publisher')
+        self.finished = False
         self.pub = self.create_publisher(Float64MultiArray,'data',10)
         self.timer = self.create_timer(1.0,self.timer_callback)
         self.seq = 0
@@ -23,16 +24,22 @@ class Publisher(Node):
         self.pub.publish(msg)
 
         if self.seq >= 10:
-            end = String()
-            end.data = 'done'
-            self.status_pub.publish(end)
-            self.get_logger().info('已发完10组并发送结束信号')
-            self.timer.cancel() 
+            self.timer.cancel()
+            self.done_timer = self.create_timer(0.3, self.send_done)
 
+    def send_done(self):
+        end = String()
+        end.data = 'done'
+        self.status_pub.publish(end)
+        self.get_logger().info('已发完10组并发送结束信号')
+        self.done_timer.cancel()
+        self.finished = True
 
 def main():
     rclpy.init()
     node = Publisher()
-    rclpy.spin(node)
+    while rclpy.ok() and not node.finished:
+        rclpy.spin_once(node, timeout_sec=0.2)
     node.destroy_node()
     rclpy.shutdown()
+
