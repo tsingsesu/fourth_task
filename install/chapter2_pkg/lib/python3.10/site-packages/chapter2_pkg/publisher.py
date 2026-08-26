@@ -1,7 +1,7 @@
 import rclpy
 import random
 from rclpy.node import Node 
-from std_msgs.msg import Float64MultiArray
+from std_msgs.msg import Float64MultiArray , String
 
 class Publisher(Node):
     def __init__(self):
@@ -9,6 +9,7 @@ class Publisher(Node):
         self.pub = self.create_publisher(Float64MultiArray,'data',10)
         self.timer = self.create_timer(1.0,self.timer_callback)
         self.seq = 0
+        self.status_pub = self.create_publisher(String , 'status',10)
 
     def timer_callback(self):
         self.seq = self.seq + 1
@@ -20,6 +21,14 @@ class Publisher(Node):
             random.uniform(25.0,48.0),
         ]
         self.pub.publish(msg)
+
+        if self.seq >= 10:
+            end = String()
+            end.data = 'done'
+            self.status_pub.publish(end)
+            self.get_logger().info('已发完10组并发送结束信号')
+            self.timer.cancel() 
+
 
 def main():
     rclpy.init()
