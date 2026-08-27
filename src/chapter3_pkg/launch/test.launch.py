@@ -1,52 +1,36 @@
 import os
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument
-from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
 
-def generate_launch_description():
+def generate_launch_description():#产生launch描述
 
     params_yaml = os.path.join(
         get_package_share_directory('chapter3_pkg'),'config','params.yaml'
-    )#得到配置文件绝对路径
+    )#得到配置文件绝对路径，与setup.py line16~17有联系，从install/.../share中找params.yaml
 
-    #声明
-    test_count = LaunchConfiguration('test_count')
-    publish_period = LaunchConfiguration('publish_period')
-    balance_threshold = LaunchConfiguration('balance_threshold')
-    low_voltage_threshold = LaunchConfiguration('low_voltage_threshold')
-    high_temp_threshold = LaunchConfiguration('high_temp_threshold')
-
+    '''填actions，当ros2 launch chapter3_pkg test.launch.py时，执行以下内容
+    return返回给ros2 launch 的系统库(launch_ros NodeAction)    
+    '''
     return LaunchDescription([
-        DeclareLaunchArgument('test_count', default_value='5', description='测试数据数量'),
-        DeclareLaunchArgument('publish_period', default_value='0.5', description='发布周期'),
-        DeclareLaunchArgument('balance_threshold', default_value='5.0', description='平衡偏差阈值'),
-        DeclareLaunchArgument('low_voltage_threshold', default_value='11.0', description='低电压阈值'),
-        DeclareLaunchArgument('high_temp_threshold', default_value='42.0', description='高温阈值'),
-
-        # 发布节点:先加载 YAML,再用 launch 参数覆盖(后面覆盖优先)
+        #先后执行以下两个Node
+        # 发布节点
         Node(
-            package='chapter3_pkg',
-            executable='publisher',
-            name='my_publisher',
-            parameters=[
-                params_yaml,
-                {'test_count': test_count, 'publish_period': publish_period},
-            ],
-            output='screen',
+            package='chapter3_pkg',#第一个参数功能包名字
+            executable='publisher',#第二个参数可执行文件名字
+            name='my_publisher',#必须和yaml中的名字对应
+            parameters=[params_yaml],#应用和yaml中的名字对应的yaml参数
+            output='screen',#日志，输出到屏幕
         ),
         # 订阅节点
         Node(
             package='chapter3_pkg',
             executable='subscriber',
             name='my_subscriber',
-            parameters=[
-                params_yaml,
-                {'balance_threshold': balance_threshold,
-                 'low_voltage_threshold': low_voltage_threshold,
-                 'high_temp_threshold': high_temp_threshold},
-            ],
+            parameters=[params_yaml],
             output='screen',
         ),
+        '''
+        这里只是产生清单，真正负责执行的是ros2 launch 的系统库(launch_ros NodeAction)
+        '''
     ])

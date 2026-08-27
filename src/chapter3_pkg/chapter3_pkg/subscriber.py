@@ -6,7 +6,7 @@ class Subscriber(Node):
     def __init__(self):
         super().__init__('my_subscriber')
         self.finished = False 
-        #声明
+        #声明，declare_parameter来自rclpy.Node，建立可执行文件、YAML、launch的联系
         self.declare_parameter('balance_threshold', 5.0)       
         self.declare_parameter('low_voltage_threshold', 11.0)  
         self.declare_parameter('high_temp_threshold', 42.0)    
@@ -57,7 +57,7 @@ class Subscriber(Node):
         self.get_logger().info(f'第{seq}次前置测试：平衡误差{angle:.2f}°，核心电压 {voltage:.2f} V，核心温度 {temperature:.1f}℃')
 
         self.count += 1 
-
+        #任务3参数化
         if angle > self.balance or angle < -self.balance\
             or voltage < self.low_voltage or temperature > self.high_temp:
             self.warningmsg = self.warningmsg + 1

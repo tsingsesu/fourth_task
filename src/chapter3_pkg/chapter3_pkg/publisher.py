@@ -8,10 +8,10 @@ class Publisher(Node):
         super().__init__('my_publisher')
         self.finished = False
         
-        self.declare_parameter('test_count',5)#声明
+        self.declare_parameter('test_count',5)#声明，建立联系
         self.declare_parameter('publish_period',0.5)
 
-        self.test_count = self.get_parameter('test_count').value#读取
+        self.test_count = self.get_parameter('test_count').value#读取，参数化
         self.publish_period = self.get_parameter('publish_period').value
 
         if self.test_count < 1:
@@ -46,7 +46,7 @@ class Publisher(Node):
         end = String()
         end.data = 'done'
         self.status_pub.publish(end)
-        self.get_logger().info('已发完10组并发送结束信号')
+        self.get_logger().info('已发完并发送结束信号')
         self.done_timer.cancel()
         self.finished = True
 

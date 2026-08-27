@@ -1,7 +1,7 @@
 my_publisher:
   ros__parameters:
-    test_count: 5
-    publish_period: 0.5
+    test_count: 8 #测试，修改默认参数看是否能用外部yaml修改内部python参数
+    publish_period: 0.3
 
 my_subscriber:
   ros__parameters:

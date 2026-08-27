@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>chapter3_pkg</name>
+  <name>chapter3_pkg</name><!--line 4~8元数据，基本信息-->
   <version>0.0.0</version>
   <description>TODO: Package description</description>
   <maintainer email="tsingsesu@163.com">lhl87</maintainer>
   <license>TODO: License declaration</license>
 
-  <depend>rclpy</depend>
+  <depend>rclpy</depend><!--依赖声明，决定编译顺序，补齐环境等等-->
   <exec_depend>launch</exec_depend>
   <exec_depend>launch_ros</exec_depend>
 
