@@ -1,4 +1,0 @@
-[console_scripts]
-publisher = chapter3_pkg.publisher:main
-subscriber = chapter3_pkg.subscriber:main
-

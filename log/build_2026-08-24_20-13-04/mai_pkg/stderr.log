@@ -1,5 +1,0 @@
-  File "/home/lhl87/fourth_task/install/mai_pkg/lib/python3.10/site-packages/mai_pkg/turtle_control.py", line 37
-    self.get_logger().info(f'{'Tur_control'},启动! ')
-                               ^^^^^^^^^^^
-SyntaxError: f-string: expecting '}'
-
