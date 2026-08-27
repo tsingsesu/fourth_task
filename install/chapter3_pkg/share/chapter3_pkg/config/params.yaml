@@ -1,0 +1,10 @@
+my_publisher:
+  ros__parameters:
+    test_count: 5
+    publish_period: 0.5
+
+my_subscriber:
+  ros__parameters:
+    balance_threshold: 5.0
+    low_voltage_threshold: 11.0
+    high_temp_threshold: 42.0
