@@ -3,5 +3,3 @@
 ### 我是自动化 张冠良
 
 #### 任务1在`mai_pkg`包中，任务2在`chapter2_pkg`中，任务3在`chapter3_pkg`中，我认为所有要求均已完成，任务3各个文件的运行逻辑、具体代码作用等个人理解已写在注释中，请您审查。
-
-### github仓库地址 https://github.com/tsingsesu/fourth_task.git
